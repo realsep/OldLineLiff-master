@@ -1,23 +1,27 @@
-window.onload = function (e) {
-    liff.init(function (data) {
+window.onload = function(e) {
+    liff.init(function(data) {
         initializeApp(data);
     });
 };
 
 function initializeApp(data) {
-    document.getElementById('sendmessagebutton').addEventListener('click', function () {
-        var msg = document.getElementById('bchcode').value;
-        
-        
-        
-        
+    document.getElementById('sendmessagebutton').addEventListener('click', function() {
+        var msg_code = document.getElementById('bchcode').value;
+        var msg_start = document.getElementById('date_start').value;
+        var msg_stop = document.getElementById('date_stop').value;
+        res.redirect('https://fast-beach-63742.herokuapp.com');
+
+
+
+
         liff.sendMessages([{
             type: 'text',
-            text: msg
-        }
-          ]).then(function () {
+            text: msg_code,
+            text: msg_start,
+            text: msg_stop
+        }]).then(function() {
             liff.closeWindow();
-        }).catch(function (error) {
+        }).catch(function(error) {
             window.alert("Error sending message: " + error);
         });
     });

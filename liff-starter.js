@@ -10,14 +10,16 @@ function initializeApp(data) {
         var msg = document.getElementById('bchcode').value;
         // /////////////////////////////////////////////////
         var xhttp = new XMLHttpRequest();
-        var x = xhttp.responseText;
-        var jsonResponse = JSON.parse(x);
+//         var x = xhttp.responseText;
+//         var jsonResponse = JSON.parse(x);
         // var resultText = XMLHttpRequest.responseText;
         
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 //   x = xhttp.responseText;
-                document.getElementById('regisbox').innerHTML = this.responseText;
+//              document.getElementById('regisbox').innerHTML = this.responseText;
+                var x = xhttp.responseText;
+                var jsonResponse = JSON.parse(x);
                 x = this.responseText; //เปลี่ยนจาก aleart เป็นรับค่าตัวแปรมา
             }
         };

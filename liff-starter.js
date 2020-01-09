@@ -8,10 +8,9 @@ function initializeApp(data) {
     document.getElementById('sendmessagebutton').addEventListener('click', function() {
         //         var x;
         var msg = document.getElementById('bchcode').value;
-        function loadDoc() {
         // /////////////////////////////////////////////////
         var xhttp = new XMLHttpRequest();
-       // var resultText = XMLHttpRequest.responseText;
+        // var resultText = XMLHttpRequest.responseText;
         var x;
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
@@ -25,7 +24,8 @@ function initializeApp(data) {
 
         xhttp.setRequestHeader("Content-Type", "application/json");
         xhttp.send(null)
-    }
+        console.log(request.getResponseHeader('content-type'));
+
 
 
         liff.sendMessages([{

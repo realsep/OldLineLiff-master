@@ -6,18 +6,18 @@ window.onload = function(e) {
 
 function initializeApp(data) {
     document.getElementById('sendmessagebutton').addEventListener('click', function() {
-        var msg_code = document.getElementById('bchcode').value;
-        var msg_start = document.getElementById('date_start').value;
-        var msg_stop = document.getElementById('date_stop').value;
+        var msg = document.getElementById('bchcode').value;
+        var msg1 = document.getElementById('date_start').value;
+        var msg2 = document.getElementById('date_stop').value;
 
 
 
 
         liff.sendMessages([{
             type: 'text',
-            text: msg_code,
-            text: msg_start,
-            text: msg_stop
+            text: msg,
+            text: msg1,
+            text: msg2
         }]).then(function() {
             liff.closeWindow();
         }).catch(function(error) {

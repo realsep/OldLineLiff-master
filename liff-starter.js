@@ -10,11 +10,12 @@ function initializeApp(data) {
         var msg = document.getElementById('bchcode').value;
         // /////////////////////////////////////////////////
         var xhttp = new XMLHttpRequest();
+        var resultText = XMLHttpRequest.responseText;
         var x;
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                 x.getElementById('/liff').innerHTML = xmlhttp.responseText;
-                // x = this.responseText; //เปลี่ยนจาก aleart เป็นรับค่าตัวแปรมา
+                // x = xhttp.responseText;
+                x = this.responseText; //เปลี่ยนจาก aleart เป็นรับค่าตัวแปรมา
             }
         };
         xhttp.open("POST", "https://stormy-spire-09445.herokuapp.com/liff", true);
@@ -24,7 +25,7 @@ function initializeApp(data) {
 
         liff.sendMessages([{
             type: 'text',
-            text: x
+            text: msg
         }]).then(function() {
             liff.closeWindow();
         }).catch(function(error) {

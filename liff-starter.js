@@ -15,15 +15,16 @@ function initializeApp(data) {
         var x;
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-//                 x = xhttp.responseText;
+                //                 x = xhttp.responseText;
                 x = this.responseText; //เปลี่ยนจาก aleart เป็นรับค่าตัวแปรมา
-               
+
             }
         };
         xhttp.open("POST", "https://stormy-spire-09445.herokuapp.com/liff", true);
 
         xhttp.setRequestHeader("Content-Type", "application/json");
-        xhttp.send()
+        xhttp.send(null)
+        document.getElementById('regisbox').innerHTML = HttPRequest.responseText;
 
         liff.sendMessages([{
             type: 'text',

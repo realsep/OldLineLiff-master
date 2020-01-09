@@ -16,12 +16,13 @@ function initializeApp(data) {
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 //   x = xhttp.responseText;
-                document.getElementById('regisbox').innerHTML = this.responseText;
+                // document.getElementById('regisbox').innerHTML = this.responseText;
                 x = this.responseText; //เปลี่ยนจาก aleart เป็นรับค่าตัวแปรมา
 
             }
         };
         xhttp.open("POST", "https://stormy-spire-09445.herokuapp.com/liff", true);
+        xhttp.responseType = 'json'
 
         xhttp.setRequestHeader("Content-Type", "application/json");
         xhttp.send(null)

@@ -6,16 +6,18 @@ window.onload = function(e) {
 
 function initializeApp(data) {
     document.getElementById('sendmessagebutton').addEventListener('click', function() {
-//         var x;
+        //         var x;
         var msg = document.getElementById('bchcode').value;
         // /////////////////////////////////////////////////
         var xhttp = new XMLHttpRequest();
+        var x;
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                x = this.responseText; //เปลี่ยนจาก aleart เป็นรับค่าตัวแปรมา
+                x = xhttp.responseText;
+                // x = this.responseText; //เปลี่ยนจาก aleart เป็นรับค่าตัวแปรมา
             }
         };
-        xhttp.open("GET", "https://stormy-spire-09445.herokuapp.com/liff", true);
+        xhttp.open("POST", "https://stormy-spire-09445.herokuapp.com/liff", true);
         xhttp.setRequestHeader("Content-Type", "application/json");
         xhttp.send()
 

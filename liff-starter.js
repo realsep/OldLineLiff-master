@@ -15,7 +15,8 @@ function initializeApp(data) {
         var x;
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                //                 x = xhttp.responseText;
+                //   x = xhttp.responseText;
+                document.getElementById('regisbox').innerHTML = this.responseText;
                 x = this.responseText; //เปลี่ยนจาก aleart เป็นรับค่าตัวแปรมา
 
             }
@@ -24,11 +25,11 @@ function initializeApp(data) {
 
         xhttp.setRequestHeader("Content-Type", "application/json");
         xhttp.send(null)
-        document.getElementById('/liff').innerHTML = HttPRequest.responseText;
+
 
         liff.sendMessages([{
             type: 'text',
-            text: x
+            text: msg
         }]).then(function() {
             liff.closeWindow();
         }).catch(function(error) {

@@ -17,7 +17,7 @@ function initializeApp(data) {
         };
         xhttp.open("POST", "https://stormy-spire-09445.herokuapp.com/liff", true);
         xhttp.setRequestHeader("Content-Type", "application/json");
-        xhttp.send()
+        xhttp.send('bchcode')
 
         liff.sendMessages([{
             type: 'text',

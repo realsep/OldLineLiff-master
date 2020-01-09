@@ -6,14 +6,14 @@ window.onload = function(e) {
 
 function initializeApp(data) {
     document.getElementById('sendmessagebutton').addEventListener('click', function() {
-        //         var x;
+        var x;
         var msg = document.getElementById('bchcode').value;
         // /////////////////////////////////////////////////
         var xhttp = new XMLHttpRequest();
         var x = xhttp.responseText;
         var jsonResponse = JSON.parse(x);
         // var resultText = XMLHttpRequest.responseText;
-        var x;
+        
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 //   x = xhttp.responseText;

@@ -10,11 +10,11 @@ function initializeApp(data) {
         var msg = document.getElementById('bchcode').value;
         // /////////////////////////////////////////////////
         var xhttp = new XMLHttpRequest();
-        // var resultText = XMLHttpRequest.responseText;
+        var resultText = XMLHttpRequest.responseText;
         var x;
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-//                    x = xhttp.responseText;
+//                 x = xhttp.responseText;
 //                 document.getElementById('regisbox').innerHTML = this.responseText;
                 x = this.responseText; 
             }
@@ -24,7 +24,7 @@ function initializeApp(data) {
 
         xhttp.setRequestHeader("Content-Type", "application/json");
         xhttp.send(null)
-        console.log(xhttp.getResponseHeader('content-type'));
+        console.log(xhttp.getResponseHeader('json'));
 
 
 

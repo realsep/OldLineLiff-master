@@ -6,23 +6,23 @@ window.onload = function(e) {
 
 function initializeApp(data) {
     document.getElementById('sendmessagebutton').addEventListener('click', function() {
+        var x;
         var msg = document.getElementById('bchcode').value;
         // /////////////////////////////////////////////////
-//             var xhttp = new XMLHttpRequest();
-//             xhttp.onreadystatechange = function() {
-//                 if (this.readyState == 4 && this.status == 200) {
-//                     alert(this.responseText);
-//                 }
-//             };
-//             // var x = 
-//             xhttp.open("POST", "https://stormy-spire-09445.herokuapp.com/liff", true);
-//             xhttp.setRequestHeader("Content-Type", "application/json");
-//             xhttp.send("test")
-        
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                x = this.responseText; //เปลี่ยนจาก aleart เป็นรับค่าตัวแปรมา
+            }
+        };
+        xhttp.open("POST", "https://stormy-spire-09445.herokuapp.com/liff", true);
+        xhttp.setRequestHeader("Content-Type", "application/json");
+        xhttp.send("")
+
 
         liff.sendMessages([{
             type: 'text',
-            text: msg
+            text: x
         }]).then(function() {
             liff.closeWindow();
         }).catch(function(error) {

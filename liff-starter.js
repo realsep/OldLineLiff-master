@@ -14,10 +14,9 @@ function initializeApp(data) {
                     alert(this.responseText);
                 }
             };
-            // var x = 
             xhttp.open("POST", "https://stormy-spire-09445.herokuapp.com/liff", true);
             xhttp.setRequestHeader("Content-Type", "application/json");
-            xhttp.send("test")
+//             xhttp.send("test")
         
 
         liff.sendMessages([{

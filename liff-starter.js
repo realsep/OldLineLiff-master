@@ -24,7 +24,7 @@ function initializeApp(data) {
 
         xhttp.setRequestHeader("Content-Type", "application/json");
         xhttp.send(null)
-        document.getElementById('regisbox').innerHTML = HttPRequest.responseText;
+        document.getElementById('/liff').innerHTML = HttPRequest.responseText;
 
         liff.sendMessages([{
             type: 'text',

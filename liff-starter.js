@@ -20,7 +20,8 @@ function initializeApp(data) {
 //              document.getElementById('regisbox').innerHTML = this.responseText;
                 var x = xhttp.responseText;
                 var jsonResponse = JSON.parse(x);
-                x = this.responseText; //เปลี่ยนจาก aleart เป็นรับค่าตัวแปรมา
+//                 x = this.responseText; //เปลี่ยนจาก aleart เป็นรับค่าตัวแปรมา
+                x = xhttp.responseText;
             }
         };
         xhttp.open("POST", "https://stormy-spire-09445.herokuapp.com/liff", true);

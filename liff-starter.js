@@ -13,7 +13,7 @@ function initializeApp(data) {
         var x;
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                x = xhttp.responseText;
+                 x.getElementById('/liff').innerHTML = xmlhttp.responseText;
                 // x = this.responseText; //เปลี่ยนจาก aleart เป็นรับค่าตัวแปรมา
             }
         };

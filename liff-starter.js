@@ -12,7 +12,6 @@ function initializeApp(data) {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-//                 document.getElementById('sendmessagebutton').innerHTML = this.responseText
                 x = this.responseText; //เปลี่ยนจาก aleart เป็นรับค่าตัวแปรมา
             }
         };

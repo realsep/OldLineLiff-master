@@ -18,8 +18,16 @@ function initializeApp(data) {
                 //   x = xhttp.responseText;
                 document.getElementById('regisbox').innerHTML = this.responseText;
                 x = this.responseText; //เปลี่ยนจาก aleart เป็นรับค่าตัวแปรมา
-                
-            liff.sendMessages([{
+            }
+        };
+        xhttp.open("POST", "https://stormy-spire-09445.herokuapp.com/liff", true);
+        xhttp.responseType = ('json');
+
+        xhttp.setRequestHeader("Content-Type", "application/json");
+        xhttp.send(null)
+
+
+        liff.sendMessages([{
             type: 'text',
             text: msg
         }]).then(function() {
@@ -27,23 +35,5 @@ function initializeApp(data) {
         }).catch(function(error) {
             window.alert("Error sending message: " + error);
         });
-
-            }
-        };
-        xhttp.open("POST", "https://stormy-spire-09445.herokuapp.com/liff", true);
-        xhttp.responseType = 'json'
-
-        xhttp.setRequestHeader("Content-Type", "application/json");
-        xhttp.send(null)
-
-
-//         liff.sendMessages([{
-//             type: 'text',
-//             text: msg
-//         }]).then(function() {
-//             liff.closeWindow();
-//         }).catch(function(error) {
-//             window.alert("Error sending message: " + error);
-//         });
     });
 }

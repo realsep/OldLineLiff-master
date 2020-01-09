@@ -9,7 +9,6 @@ function initializeApp(data) {
         var msg_code = document.getElementById('bchcode').value;
         var msg_start = document.getElementById('date_start').value;
         var msg_stop = document.getElementById('date_stop').value;
-        res.redirect('https://fast-beach-63742.herokuapp.com');
 
 
 

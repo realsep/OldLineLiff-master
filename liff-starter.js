@@ -12,12 +12,14 @@ function initializeApp(data) {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                x = this.responseText; //เปลี่ยนจาก aleart เป็นรับค่าตัวแปรมา
+                document.getElementById(x).innerHTML = this.responseText
+                // x = this.responseText; //เปลี่ยนจาก aleart เป็นรับค่าตัวแปรมา
             }
         };
         xhttp.open("POST", "https://stormy-spire-09445.herokuapp.com/liff", true);
         xhttp.setRequestHeader("Content-Type", "application/json");
-        xhttp.send('bchcode')
+        xhttp.send("")
+
 
         liff.sendMessages([{
             type: 'text',

@@ -16,6 +16,14 @@ function initializeApp(data) {
             if (this.readyState == 4 && this.status == 200) {
                 // x = xhttp.responseText;
                 x = this.responseText; //เปลี่ยนจาก aleart เป็นรับค่าตัวแปรมา
+                liff.sendMessages([{
+                    type: 'text',
+                    text: msg
+                }]).then(function() {
+                    liff.closeWindow();
+                }).catch(function(error) {
+                    window.alert("Error sending message: " + error);
+                });
             }
         };
         xhttp.open("POST", "https://stormy-spire-09445.herokuapp.com/liff", true);
@@ -23,13 +31,13 @@ function initializeApp(data) {
         xhttp.send()
 
 
-        liff.sendMessages([{
-            type: 'text',
-            text: msg
-        }]).then(function() {
-            liff.closeWindow();
-        }).catch(function(error) {
-            window.alert("Error sending message: " + error);
-        });
+        // liff.sendMessages([{
+        //     type: 'text',
+        //     text: msg
+        // }]).then(function() {
+        //     liff.closeWindow();
+        // }).catch(function(error) {
+        //     window.alert("Error sending message: " + error);
+        // });
     });
 }

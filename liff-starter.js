@@ -24,7 +24,7 @@ function initializeApp(data) {
 
         xhttp.setRequestHeader("Content-Type", "application/json");
         xhttp.send(null)
-        console.log(request.getResponseHeader('content-type'));
+        console.log(xhttp.getResponseHeader('content-type'));
 
 
 

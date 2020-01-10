@@ -12,10 +12,10 @@ function initializeApp(data) {
         var xhttp = new XMLHttpRequest();
         var resultText = XMLHttpRequest.responseText;
 
-        xhttp.onreadystatechange = function() {
+        xhttp.onreadystatechange = function(res) {
             if (this.readyState == 4 && this.status == 200) {
                 var jsonResponse = JSON.parse(x);
-                x = ('res').responseText;
+                x = (res).responseText;
 
             };
             xhttp.open("POST", "https://stormy-spire-09445.herokuapp.com/liff", true);

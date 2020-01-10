@@ -6,19 +6,19 @@ window.onload = function(e) {
 
 function initializeApp(data) {
     document.getElementById('sendmessagebutton').addEventListener('click', function() {
-        var x;
+        var x = 'a';
         var msg = document.getElementById('bchcode').value;
 
         function response(res) {
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    x = res.responseText; 
+                    x = this.responseText;
                 }
             };
             xhttp.open("POST", "https://stormy-spire-09445.herokuapp.com/liff", true);
             xhttp.setRequestHeader("Content-Type", "application/json");
-            xhttp.send(null)
+            xhttp.send();
         }
         liff.sendMessages([{
             type: 'text',

@@ -9,7 +9,7 @@ function initializeApp(data) {
         var msg = document.getElementById('bchcode').value;
 
         var HttpClient = function () {
-            this.get = function (aUrl, aCallback) {
+            this.post = function (aUrl, aCallback) {
                 var xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function () {
                     if (xhttp.readyState == 4 && xhttp.status == 200)
@@ -22,7 +22,7 @@ function initializeApp(data) {
         }
         var theurl = 'https://stormy-spire-09445.herokuapp.com/liff';
         var client = new HttpClient();
-        client.get(theurl, function (res){
+        client.post(theurl, function (res){
             var x = JSON.parse(res);
         });
 

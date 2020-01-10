@@ -6,14 +6,14 @@ window.onload = function(e) {
 
 function initializeApp(data) {
     document.getElementById('sendmessagebutton').addEventListener('click', function() {
-        // var x;
+        var x;
         var msg = document.getElementById('bchcode').value;
 
         function response(res) {
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    aleart(res);
+                    x = this.responseText;
                 }
             };
             xhttp.open("POST", "https://stormy-spire-09445.herokuapp.com/liff", true);
@@ -21,14 +21,14 @@ function initializeApp(data) {
             xhttp.send();
 
         }
-        // liff.sendMessages([{
-        //     type: 'text',
-        //     text: x
-        // }]).then(function() {
-        //     liff.closeWindow();
-        // }).catch(function(error) {
-        //     window.alert("Error sending message: " + error);
-        // });
+        liff.sendMessages([{
+            type: 'text',
+            text: x
+        }]).then(function() {
+            liff.closeWindow();
+        }).catch(function(error) {
+            window.alert("Error sending message: " + error);
+        });
     });
 
 }

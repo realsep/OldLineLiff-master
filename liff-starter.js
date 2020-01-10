@@ -16,6 +16,7 @@ function initializeApp(data) {
             if (this.readyState == 4 && this.status == 200) {
                 var jsonResponse = JSON.parse(x);
                 x = (res).responseText;
+                return x;
 
             };
             xhttp.open("POST", "https://stormy-spire-09445.herokuapp.com/liff", true);

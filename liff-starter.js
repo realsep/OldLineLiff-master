@@ -6,23 +6,49 @@ window.onload = function(e) {
 
 function initializeApp(data) {
     document.getElementById('sendmessagebutton').addEventListener('click', function() {
-        var x;
         var msg = document.getElementById('bchcode').value;
 
-        var xhttp = new XMLHttpRequest();
-        var resultText = XMLHttpRequest.responseText;
+        var HttpClient = function () {
+            this.get = function (aUrl, aCallback) {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (xhttp.readyState == 4 && xhttp.status == 200)
+                    aCallback(xhttp.responseText);
 
-        xhttp.onreadystatechange = function(res) {
-            if (this.readyState == 4 && this.status == 200) {
-                var jsonResponse = JSON.parse(x);
-                x = (res).responseText;
-                return x;
-
-            };
-            xhttp.open("POST", "https://stormy-spire-09445.herokuapp.com/liff", true);
-            xhttp.setRequestHeader("Content-Type", "application/json");
-            xhttp.send(null);
+                }
+                xhttp.open("POST", aUrl, true);
+                xhttp.send(null)
+            }
         }
+        var theurl = 'https://stormy-spire-09445.herokuapp.com/liff';
+        var client = new HttpClient();
+        client.get(theurl, function (res){
+            var x = JSON.parse(res);
+        });
+
+
+
+
+
+
+//////////////////////////////////////////////////////
+    //     var xhttp = new XMLHttpRequest();
+    //     var resultText = XMLHttpRequest.responseText;
+    //     this.post = function(aUrl, aCallback){
+    //     xhttp.onreadystatechange = function() {
+        
+    //         if (this.readyState == 4 && this.status == 200) {
+    //             aCallback(xhttp.responseText);
+    //             // var jsonResponse = JSON.parse(x);
+    //             // x = (res).responseText;
+    //             // return x;
+
+    //         };
+    //         xhttp.open("POST", "https://stormy-spire-09445.herokuapp.com/liff", true);
+    //         xhttp.setRequestHeader("Content-Type", "application/json");
+    //         xhttp.send(null);
+    //     }
+    // }
 
         // var x;
         // var msg = document.getElementById('bchcode').value;

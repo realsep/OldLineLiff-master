@@ -6,7 +6,7 @@ window.onload = function(e) {
 
 function initializeApp(data) {
     document.getElementById('sendmessagebutton').addEventListener('click', function() {
-        var x = 'a';
+
         var msg = document.getElementById('bchcode').value;
 
         function response(res) {
@@ -19,6 +19,7 @@ function initializeApp(data) {
             xhttp.open("POST", "https://stormy-spire-09445.herokuapp.com/liff", true);
             xhttp.setRequestHeader("Content-Type", "application/json");
             xhttp.send();
+            var x = res;
         }
         liff.sendMessages([{
             type: 'text',

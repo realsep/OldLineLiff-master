@@ -10,10 +10,10 @@ function initializeApp(data) {
         var msg = document.getElementById('bchcode').value;
 
         function response(res) {
-            var xhttp = new XMLHttpRequest(res);
+            var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    x = this.responseText; 
+                    x = res.responseText; 
                 }
             };
             xhttp.open("POST", "https://stormy-spire-09445.herokuapp.com/liff", true);

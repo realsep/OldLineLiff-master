@@ -1,10 +1,10 @@
 window.onload = function(e) {
-    liff.init(function(data) {
-        initializeApp(data);
-    });
+    // liff.init(function(data) {
+    initializeApp();
+    // });
 };
 
-function initializeApp(data) {
+function initializeApp() {
     document.getElementById('sendmessagebutton').addEventListener('click', function() {
         var x;
         var msg = document.getElementById('bchcode').value;

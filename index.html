@@ -15,8 +15,7 @@
 
         function onSubmit() {
             $(document).ready(function() {
-                $("#uniquedomid").bind('click', function(){
-                    $.ajax({
+                $.ajax({
                     type: "POST",
                     dataType: "text", 
                     url: "https://damp-bayou-88423.herokuapp.com/liff",
@@ -31,22 +30,6 @@
                     }
 
                 });
-                });
-                // $.ajax({
-                //     type: "POST",
-                //     dataType: "text", 
-                //     url: "https://damp-bayou-88423.herokuapp.com/liff",
-                //     contentType: "application/json; charset=utf-8",
-
-                //     success: function(res) {
-                //         alert(res); 
-                           
-                //     },
-                //     error: function(res) {
-                //         alert("เกิดข้อผิดพลาด " + res);
-                //     }
-
-                // });
 
                 liff.sendMessage ([{
                     type: 'text',

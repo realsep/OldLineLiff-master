@@ -15,6 +15,10 @@
 
         function onSubmit() {
             $(document).ready(function(e) {
+                $('a').click(function(e){
+                    e.preventDefault();
+                    $("#index").html($(this).attr('href'));
+            });
                 $.ajax({
                     type: "POST",
                     dataType: "text", 

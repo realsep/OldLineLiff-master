@@ -40,12 +40,12 @@
                 success: function(res) {
 
         
-                    liff.init(function() {
-                    initializeApp(res);
+                    liff.init(function(res) {
+                    initializeApp();
                 });
 
                 },
-                error: function(res) {
+                error: function() {
                     alert("เกิดข้อผิดพลาด " + res);
                 }
             });

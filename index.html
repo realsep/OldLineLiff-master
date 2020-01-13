@@ -25,6 +25,12 @@
         </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
     <script>
+        window.onload = function (e){
+             liff.init(function(res) {
+             initializeApp();
+            });
+
+               };
     function onSubmit() {
         $(document).ready(function() {
             $("#result ").html('');
@@ -37,13 +43,10 @@
                 type: "POST ",
                 url: "https://damp-bayou-88423.herokuapp.com/liff ",
                 contentType: "application/json; charset=utf-8 ",
+                    
                 success: function(res) {
-
-        
-                    liff.init(function(res) {
-                    initializeApp();
-                });
-
+                    
+            
                 },
                 error: function() {
                     alert("เกิดข้อผิดพลาด " + res);

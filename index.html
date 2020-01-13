@@ -14,11 +14,7 @@
             };
 
         function onSubmit() {
-            $(document).ready(function(e) {
-                $('a').click(function(e){
-                    e.preventDefault();
-                    $("#index").html($(this).attr('href'));
-            });
+            $(document).ready(function(e){
                 $.ajax({
                     type: "POST",
                     dataType: "text", 

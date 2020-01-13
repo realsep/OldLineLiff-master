@@ -13,6 +13,14 @@ function initializeApp() {
         xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     x = this.responseText;
+                liff.sendMessages([{
+                type: 'text',
+                text: x
+            }]).then(function() {
+                liff.closeWindow();
+            }).catch(function(error) {
+                window.alert("Error sending message: " + error);
+            });
                     
 
                 };
@@ -22,12 +30,12 @@ function initializeApp() {
                 return x;
 
             }
-            liff.sendMessages([{
-                type: 'text',
-                text: x
-            }]).then(function() {
-                liff.closeWindow();
-            }).catch(function(error) {
-                window.alert("Error sending message: " + error);
-            });
+//             liff.sendMessages([{
+//                 type: 'text',
+//                 text: x
+//             }]).then(function() {
+//                 liff.closeWindow();
+//             }).catch(function(error) {
+//                 window.alert("Error sending message: " + error);
+//             });
     });

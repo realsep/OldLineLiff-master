@@ -47,7 +47,7 @@
                     
             
                 },
-                error: function() {
+                error: function(res) {
                     alert("เกิดข้อผิดพลาด " + res);
                 }
             });
@@ -55,11 +55,11 @@
     };
 
 
-    function initializeApp() {
+    function initializeApp(data) {
     document.getElementById('sendmessagebutton').addEventListener('click', function() {
         liff.sendMessages([{
             type: 'text',
-            text: res
+            text: data
         }]).then(function() {
             liff.closeWindow();
         }).catch(function(error) {

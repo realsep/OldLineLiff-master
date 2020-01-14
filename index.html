@@ -11,10 +11,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
         window.onload = function(e) {
-            e.preventDefault()
+            
         };
 
         function onSubmit() {
+            e.preventDefault();
             $(document).ready(function() {
                 
                 $.ajax({
@@ -72,6 +73,6 @@
             <input type="date" name="date_stop" id="date_stop">
             <input type="submit" id="sendmessagebutton" value="Submit" onclick="onSubmit();">
         </form>
-        </div ">
+        </div>
         </body>
 </html>

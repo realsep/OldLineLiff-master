@@ -15,8 +15,8 @@
         };
 
         function onSubmit() {
-            $('.regisbox').click(function() {
-                $('#target').load('index.html')
+            $(document).ready(function() {
+                
                 $.ajax({
                     type: "POST",
                     dataType: "text",
@@ -48,7 +48,6 @@
 </head>
 
 <body>
-    <div id="target"></div>
     <div class="regisbox">
         <img src="https://cdn.icon-icons.com/icons2/582/PNG/512/man-2_icon-icons.com_55041.png" class="avatar">
         <h1>กรอกข้อมูลของท่าน</h1>

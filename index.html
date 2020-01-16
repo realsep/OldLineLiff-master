@@ -1,29 +1,37 @@
-.<html>
-    <head>
-        <title>Liff Web</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <!--<script src="liff-starter.js"></script> -->
-        <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script>
-            
-        
+.
+<html>
+
+<head>
+    <title>Liff Web</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--<script src="liff-starter.js"></script> -->
+    <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
         function onSubmit(e) {
             e.preventDefault();
             $(document).ready(function() {
+                // $("#result").html('');
+                var oSearch = {
+                    bchcode: $("#bchcode").val(),
+                    date_start: $("date_start").val(),
+                    date_stop: $("date_stop").val()
+                };
+
                 $.ajax({
                     type: "POST",
-                    dataType: "text", 
+                    dataType: "text",
                     url: "https://2d1c29dc.ngrok.io/test",
-   
+
                     contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(oSearch),
 
                     success: function(res) {
                         alert(res);
-                        
+
                         liff.init();
                         liff.sendMessages([{
                             type: 'text',
@@ -41,20 +49,21 @@
             });
         };
     </script>
-    </head>
-        <body>
-            <div class="regisbox">
-                <img src="https://cdn.icon-icons.com/icons2/582/PNG/512/man-2_icon-icons.com_55041.png" class="avatar">
-                <h1>กรอกข้อมูลของท่าน</h1>
-                <form>
-                    <p>ชื่อสาขา</p>
-                    <input type="text" name="bchcode" id="bchcode" placeholder="Enter you Branch">
-                    <p>วันที่เริ่มต้น</p>
-                    <input type="date" name="date_start" id="date_start" >
-                    <p>วันที่สิ้นสุด</p>
-                    <input type="date" name="date_stop" id="date_stop">
-                    <input type="submit" id="sendmessagebutton" value="Submit" onclick="onSubmit(event);" >
-                </form>
-            </div">
+</head>
+
+<body>
+    <div class="regisbox">
+        <img src="https://cdn.icon-icons.com/icons2/582/PNG/512/man-2_icon-icons.com_55041.png" class="avatar">
+        <h1>กรอกข้อมูลของท่าน</h1>
+        <form>
+            <p>ชื่อสาขา</p>
+            <input type="text" name="bchcode" id="bchcode" placeholder="Enter you Branch">
+            <p>วันที่เริ่มต้น</p>
+            <input type="date" name="date_start" id="date_start">
+            <p>วันที่สิ้นสุด</p>
+            <input type="date" name="date_stop" id="date_stop">
+            <input type="submit" id="sendmessagebutton" value="Submit" onclick="onSubmit(event);">
+        </form>
+        </div>
         </body>
 </html>

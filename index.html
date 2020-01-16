@@ -27,7 +27,7 @@
                     url: "https://2d1c29dc.ngrok.io/test",
 
                     contentType: "application/json; charset=utf-8",
-                    data: text.stringify(oSearch),
+                    data: JSON.stringify(oSearch),
 
                     success: function(res) {
                         alert(res);
